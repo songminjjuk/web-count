@@ -7,7 +7,7 @@ node {
        dockerImage = docker.build("leecloud/web_count:v1.0")
     }
 
- stage('Push image') {
+    stage('Push image') {
         withDockerRegistry([ credentialsId: "docker-access", url: "" ]) {
         dockerImage.push()
         }
